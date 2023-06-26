@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: .5s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #23242a;
+    
+    
+}
+.box {
+    position: relative;
+    width: 340px;
+    height: 420px;
+    background-color: #1c1c1c;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: auto;
+    margin-bottom: 150px;
+    margin-top: 100px;   
+}
+
+.box::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 500px;
+    height: 500px;
+    background:linear-gradient(0deg,transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+.box::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 500px;
+    height: 500px;
+    background:linear-gradient(0deg,transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
+    z-index: 1;
+    transform-origin: bottom right;
+   
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+.borderLiner{
+    position: absolute;
+    inset: 0;
+    top: 0;
+}
+.borderLiner::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 500px;
+    height: 500px;
+    background:linear-gradient(0deg,transparent,transparent,#ff2770,#ff2770,#ff2770);
+    z-index: 1;
+    transform-origin: bottom right;
+   
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+}
+.borderLiner::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 500px;
+    height: 500px;
+    background:linear-gradient(0deg,transparent,transparent,#ff2770,#ff2770,#ff2770);
+    z-index: 1;
+    transform-origin: bottom right;
+   
+    animation: animate 6s linear infinite;
+    animation-delay: -4.5s;
+}
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+.box form{
+    position: absolute;
+    inset: 4px;
+    background-color: #222;
+    padding: 50px 40px;
+    border-radius: 8px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    
+}
+.box form h2{
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+.box form .inputBox{
+    position: relative;
+    width: 270px;
+    margin-top: 35px;
+}
+.box form .inputBox input{
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    outline: none;
+    
+    box-shadow: none;
+    color: #23242a;
+    font-size: 1em;
+    letter-spacing: .05em;
+    transform: .5;
+    z-index: 10;
+    border: none;
+}
+.box form .inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    pointer-events: none;
+    color: #8f8f8f;
+    font-size: 1em;
+    letter-spacing: .05em;
+    transform: .5;
+}
+.box form .inputBox input:valid ~ span,
+.box form .inputBox input:focus ~ span{
+    color: #fff;
+    font-size: .75em;
+    transform: translateY(-34px);
+}
+.box form .inputBox i{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: 4px;
+    pointer-events: none;
+}
+.box form .inputBox input:valid ~ i,
+.box form .inputBox input:focus ~ i{
+height: 44px;    
+}
+.box form .inputBox input.invalid ~ i {
+    background-color: #ff2770;
+}
+.box form .links{
+
+    display: flex;
+    justify-content: space-between;
+
+}
+.box form .links a{
+    margin: 10px 0;
+    font-size: .75em;
+    color: #8f8f8f;
+    text-decoration: none;
+}
+.box form .links a:hover,
+.box form .links a:nth-child(2){
+    color: #fff;
+}
+form input[type='button'],form input[type='submit']{
+    border: none;
+    outline: none;
+    padding: 9px 25px;
+    background-color: #fff;
+    outline-width: 600;
+    border-radius: 4px;
+    font-size: .9em;
+    width: 100px;
+    margin-top: 10px;
+   
+}
+
+
+.box form input[type='button']:active{
+    opacity: .8;
+}
+form span.warning ul li{
+    margin-top: 15px;
+}

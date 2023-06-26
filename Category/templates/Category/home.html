@@ -1,0 +1,395 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{%static 'Category/css/assets/web/assets/mobirise-icons2/mobirise2.css'%} ">
+<link rel="stylesheet" href="{%static 'Category/css/assets/web/assets/mobirise-icons/mobirise-icons.css'%} ">
+<link rel="stylesheet" href="{%static 'Category/css/assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css'%} ">
+<link rel="stylesheet" href="{%static 'Category/css/assets/bootstrap/css/bootstrap.min.css'%} ">
+<link rel="stylesheet" href="{%static 'Category/css/assets/bootstrap/css/bootstrap-grid.min.css'%} ">
+<link rel="stylesheet" href="{%static 'Category/css/assets/dropdown/css/style.css'%} ">
+<link rel="stylesheet" href="{%static 'Category/css/assets/socicon/css/styles.css'%} ">
+<link rel="preload" as="style" href="{%static 'Category/css/assets/mobirise/css/mbr-additional.css'%} ">
+<link rel="stylesheet" href="{%static 'Category/css/assets/mobirise/css/mbr-additional.css'%}" type="text/css">
+<link rel="stylesheet" href="{%static 'Category/css/assets/theme/css/style.css'%} ">
+<link rel="stylesheet" href="{%static 'Category/css/owl.carousel.min.css'%} ">
+
+<link rel="stylesheet" href="{% static 'Category/css/card.css'%}">
+<link rel="stylesheet" href="{% static 'Category/css/home.css'%}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+
+{% endblock %}
+{% block title %} صفحه اصلی{% endblock %}
+{% block body %}
+
+
+<section data-bs-version="5.1" class="slider1 cid-tDzYbh9crH animate__animated animate__fadeInDown  " id="slider1-i">
+ 
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          {% for slide in slids_images %}
+          <div class="swiper-slide">
+            <img src="{{slide.image.url}}" style="height: 100%;" />
+          </div>
+          {% endfor %}
+         
+ 
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+</section>
+<section data-bs-version="5.1" class="slider5 mbr-embla cid-tDzZ6Ki0ss" id="slider5-k">
+    <div class="mbr-section-head">
+        <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+            <strong>کالا هایی که بیشترین بازدید را در ماه داشته اند</strong></h4>
+        
+    </div>
+    <div class="owl-carousel owl-theme gallery">
+      {% for product in most_like_product %}
+            <div class="content">
+              {% for img in product.image_to_product.all %}
+                  {% if forloop.first %}
+                <img src="{{img.image.url}}" alt="">
+                  {% endif %}
+                {% endfor %}
+                <h3>{{product.name}}</h3>
+                <p >{{product.des}} </p>
+                <h6>{{product.all_price}}</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+               
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star "></i></li>
+    
+                </ul>
+                <button class="buy-1"> خرید</button>
+            </div>
+        {% endfor %}
+        
+</section>
+
+<section data-bs-version="5.1" class="slider4 mbr-embla cid-tDzZwqpfD7" id="slider4-m">
+    
+    
+   
+        <div class="mbr-section-head">
+            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                <strong>مطالب آموزشی</strong></h4>
+            
+        </div>
+           
+    <div class="owl-carousel owl-theme gallery">
+       
+        <div class="content">
+            <img src="{% static 'home/css/1.png'%}" alt="">
+            <h3>lips class</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel animi voluptates pariatur optio non iusto impedit </p>
+            <h6>100/000</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+
+            </ul>
+            <button class="buy-1"> خرید</button>
+        </div>
+        <div class="content">
+            <img src="{% static 'base/css/1.png' %}" alt="">
+            <h3>lips class</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel animi voluptates pariatur optio non iusto impedit </p>
+            <h6>100/000</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+
+            </ul>
+            <button class="buy-1"> خرید</button>
+        </div>
+          
+        <div class="content">
+            <img src="{% static 'home/css/1.png'%}" alt="">
+            <h3>lips class</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel animi voluptates pariatur optio non iusto impedit </p>
+            <h6>100/000</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+
+            </ul>
+            <button class="buy-1"> خرید</button>
+        </div>
+        <div class="content">
+            <img src="{% static 'home/css/1.png'%}" alt="">
+            <h3>lips class</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel animi voluptates pariatur optio non iusto impedit </p>
+            <h6>100/000</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+
+            </ul>
+            <button class="buy-1"> خرید</button>
+        </div>  
+        <div class="content">
+            <img src="{% static 'home/css/1.png'%}" alt="">
+            <h3>lips class</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel animi voluptates pariatur optio non iusto impedit </p>
+            <h6>100/000</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+
+            </ul>
+            <button class="buy-1"> خرید</button>
+        </div>
+        <div class="content">
+            <img src="{% static 'home/css/1.png'%}" alt="">
+            <h3>lips class</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel animi voluptates pariatur optio non iusto impedit </p>
+            <h6>100/000</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+
+            </ul>
+            <button class="buy-1"> خرید</button>
+        </div>
+    
+    
+</section>
+
+<section data-bs-version="5.1" class="slider5 mbr-embla cid-tDA0lUlmWh" id="slider5-p">
+    <div class="mbr-section-head">
+        <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+            <strong>کالا هایی که بیشترین بازدید را در ماه داشته اند</strong></h4>
+        
+    </div>
+    <div class="owl-carousel owl-theme gallery">
+       
+        <div class="content">
+            <img src="{% static 'home/css/1.png'%}" alt="">
+            <h3>lips class</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel animi voluptates pariatur optio non iusto impedit </p>
+            <h6>100/000</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+
+            </ul>
+            <button class="buy-1"> خرید</button>
+        </div>
+        <div class="content">
+            <img src="{% static 'home/css/1.png'%}" alt="">
+            <h3>lips class</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel animi voluptates pariatur optio non iusto impedit </p>
+            <h6>100/000</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+
+            </ul>
+            <button class="buy-1"> خرید</button>
+        </div>
+          
+        <div class="content">
+            <img src="{% static 'home/css/1.png'%}" alt="">
+            <h3>lips class</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel animi voluptates pariatur optio non iusto impedit </p>
+            <h6>100/000</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+
+            </ul>
+            <button class="buy-1"> خرید</button>
+        </div>
+        <div class="content">
+            <img src="{% static 'base/assets/images/baner1.png'%}" alt="">
+            <h3>lips class</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel animi voluptates pariatur optio non iusto impedit </p>
+            <h6>100/000</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+
+            </ul>
+            <button class="buy-1"> خرید</button>
+        </div>  
+        <div class="content">
+            <img src="{% static 'home/css/1.png'%}" alt="">
+            <h3>lips class</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel animi voluptates pariatur optio non iusto impedit </p>
+            <h6>100/000</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+
+            </ul>
+            <button class="buy-1"> خرید</button>
+        </div>
+        <div class="content">
+            <img src="{% static 'home/css/1.png'%}" alt="">
+            <h3>lips class</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel animi voluptates pariatur optio non iusto impedit </p>
+            <h6>100/000</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+
+            </ul>
+            <button class="buy-1"> خرید</button>
+        </div>
+    
+    
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      autoplay:true,
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 1,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+  </script>
+
+<script src="{%static 'Category/css/assets/bootstrap/js/bootstrap.bundle.min.js'%}"></script>  
+<script src="{%static 'Category/css/assets/smoothscroll/smooth-scroll.js'%}"></script>  
+<script src="{%static 'Category/css/assets/ytplayer/index.js'%}"></script>  
+<script src="{%static 'Category/css/assets/dropdown/js/navbar-dropdown.js'%}"></script>  
+<script src="{%static 'Category/css/assets/theme/js/script.js'%}"></script>  
+<script src="{%static 'Category/css/assets/formoid/formoid.min.js'%}"></script>
+<script src="{%static 'Category/css/assets/embla/embla.min.js'%}"></script>  
+<script src="{%static 'Category/css/assets/embla/script.js'%}"></script>  
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="{% static 'Category/js/owl.carousel.min.js'%}"></script>
+
+  
+<script>
+   
+    $(".owl-carousel").owlCarousel({
+       autoplay:false,
+       items:3,
+       loop:false,
+       dots:true,
+       margin:30,
+       autoplayHoverPause:true,
+       touchDrag:true,
+       responsive:{
+         0:{
+           items:0,
+         },
+         350:{
+           items:1,
+         },
+         480:{
+           items:2,
+         },
+        
+         768:{
+           items:3,
+         },
+         1250:{
+           items:4,
+         },
+         1398:{
+           items:5,
+         },
+       }
+       }
+    );
+      </script>
+
+
+<script type="module">
+    import Swiper from 'swiper/swiper-bundle.esm.js';
+    import 'swiper/swiper-bundle.css';
+    var swiper = new Swiper('.swiper', {
+      effect: 'coverflow',
+      grabCursor: true,
+      autoplay:true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  </script>
+
+  <!-- Demo styles -->
+  <style>
+   
+
+    .swiper {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 300px;
+
+    }
+  </style>
+{% endblock%}

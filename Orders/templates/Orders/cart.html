@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% load humanize %}
+{% block title %}
+    categoroies
+{% endblock %}
+
+
+
+{% block css %}
+
+
+
+
+<meta charset="utf-8">
+<title>کارت من</title>
+<link rel="stylesheet" href="{% static 'Orders/css/cart.css'%}">
+
+
+{% endblock %}
+
+{% block body %}
+
+    
+
+  <div class="small-container cart-page">
+    <table>
+        <tr>
+            <th>محصولات</th>
+            <th>تعداد</th>
+            <th>جمع کل</th>
+            
+
+        </tr>
+        <tr>
+            <td>
+                <div class="cart-info">
+                    <img src="{% static 'base/css/1.png'%}" alt="">
+                    <div style="margin-right: 10px;">
+                        <p>شامپو</p>
+                        <small>قیمت :10000</small>
+                        <br>
+                        <a href="#">حذف</a>
+                    </div>
+                </div>
+            </td>
+            <td><input type="number" value="1"></td>
+            <td> 100000</td>
+        </tr>
+        
+        
+    </table>
+    <div class="total-price">
+        <table>
+            <tr>
+                <td>قیمت کل </td>
+                <td>200000 </td>
+
+            </tr>
+             <tr>
+                <td> پست </td>
+                <td>200000 </td>
+
+            </tr>
+             <tr>
+                <td> کل </td>
+                <td>400000 </td>
+
+            </tr>
+        </table>
+    </div>
+  </div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

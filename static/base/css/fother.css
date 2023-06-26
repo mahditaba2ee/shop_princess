@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+footer{
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    background: linear-gradient(to right ,#00093c,#2d0b00);
+    color: #fff;
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;
+    font-size: 13px;
+    line-height: 20px;
+    margin: 10px;
+    margin-right: 60px;
+
+}
+footer .row{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+footer .row .col{
+    flex-basis: 25%;
+    padding: 10px;
+}
+footer .row .col:nth-child(2),footer .row .col:nth-child(3){
+    flex-basis: 25%;
+}
+footer .row .col .logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 250px;
+}
+footer .row .col h3{
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+footer .row .col h3 .underline{
+    width: 100%;
+    height: 5px;
+    background: #767676;
+    border-radius: 3px;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    overflow: hidden;
+}
+
+footer .row .col h3 .underline span{
+width: 15px;
+height: 100%;
+background: #fff;
+border-radius: 3px;
+position: absolute;
+top: 0;
+left: 10px;
+animation: moving 2s linear infinite;
+}
+
+@keyframes moving{
+    0%{
+        left: -20px;
+    }
+ 
+    100%{
+        left: 100%;
+    }
+}
+
+
+
+
+footer .row .col p.email{
+    width: fit-content;
+    border-bottom: 1px solid #ccc;
+
+}
+footer .row .col ul{
+    padding: 0;
+}
+footer .row .col ul li{
+    list-style: none;
+    
+
+    margin-bottom: 12px;
+}
+footer .row .col ul a{
+    text-decoration: none;
+    color: #fff;
+
+}
+footer .row .col form{
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+}
+footer .row .col form ion-icon{
+    font-size: 18px;
+    margin-right: 10px;
+}
+footer .row .col form input{
+    width: 100%;
+    background: transparent;
+    color: #ccc;
+    border: 0;
+    outline: none;
+}
+footer .row .col form button{
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+footer .row .col form button ion-icon{
+   font-size: 16px;
+   color: #ccc;
+}
+footer .row .col .social-icons ion-icon{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    color: #000;
+    background: #fff;
+    margin-right: 15px;
+    cursor: pointer;
+}
+hr{
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 20px auto;
+}
+footer .copyright{
+    text-align: center;
+    
+
+}
+@media (max-width:700px){
+    foother{
+        bottom: unset;
+    }
+    footer .row .col{
+        flex-basis: 100%;
+   
+    }
+    footer .row .col:nth-child(2),footer .row .col:nth-child(3){
+        flex-basis: 100%;
+    }
+}

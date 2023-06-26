@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'Category/css/search_page.css'%}">
+
+
+{% endblock %}
+
+{% block body %}
+<div class="body" id="body_1">
+
+    <div id="box" class="box" >
+        <input class="input-search" type="text" placeholder="جستجو">
+        <a onclick="search_click()">
+            <ion-icon class="icon" name="search-outline"></ion-icon>
+        </a>
+    </div>
+    <div id="products"   class="products">
+
+    </div>
+</div>
+
+    <script src="{% static 'Category/js/search_page.js'%}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock %}

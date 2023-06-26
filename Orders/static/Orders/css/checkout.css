@@ -1,0 +1,27 @@
+
+.tbl-information{
+    background-color: antiquewhite;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+form .form-group input{
+    transition: .3s;
+    border-radius: 12px;
+    height: 45px;
+}
+form .form-group textarea:focus,
+form .form-group input:focus{
+    transition:.5s;
+    background-color: aqua;
+    transform: scale( 1.05 , 1.05 );
+}
+a.btn-pay{
+    border-radius: 25px;
+    background-color: #7cf6ff;
+    transition: 1s;
+}
+a.btn-pay:hover{
+    background-color: aqua;
+
+}

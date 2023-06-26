@@ -1,0 +1,72 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block css %}{% endblock %}
+
+{% block body %}
+
+
+    <title>login</title>
+    <link rel="stylesheet" href="{% static 'Accounts/css/login.css'%}">
+
+
+    <div class="box" id="box_form" >
+        <span class="borderLiner"></span>
+        <form  id="frm_login" class="animate__animated animate__fadeInDown" action="">
+            <h2>ورود</h2>
+            <div class="inputBox">
+                <input  id="txt_username" type="text" required>
+                <span>نام کاربری</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input id="txt_password"  type="password" required>
+                <span>رمز عبور</span>
+                <i></i>
+            </div>
+            <div class="links">
+                <a href="{% url 'Accounts:passwordreset'%}">فراموشی رمز عبور</a>
+                <a onclick="show_other_form()">حسابی  ندارم؟ ایجاد حساب</a>
+    
+            </div>
+            <input onclick="login(this)" type="button" value="ورود">
+            
+        </form>
+        <form id="frm_register" class="animate__animated animate__fadeInDown" style="display: none;" action="">
+            <h2>ثبت نام</h2>
+            <div class="inputBox">
+                <input onkeyup="txt_change(this,'username')" type="text" required>
+                <span>نام کاربری</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input onkeyup="txt_change(this,'email')" type="text" required>
+                <span> ایمیل </span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input onkeyup="txt_change(this,'phone')" type="text" required>
+                <span> شماره </span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input id="id_new_password1" onkeyup="txt_change(this,'password')" type="password" required>
+                <span>رمز عبور</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input onkeyup="txt_change(this,'repassword')" type="password" required>
+                <span>تایید رمز </span>
+                <i></i>
+            </div>
+            <div class="links">
+                <a onclick="show_other_form()">حسابی  دارم؟  ورود</a>
+    
+            </div>
+            <input type="button" onclick="register(this)" value="ثبت نام">
+        </form>
+    </div> 
+    
+    
+    <script src="{% static 'Accounts/js/login.js'%}"></script>
+    
+{% endblock %}

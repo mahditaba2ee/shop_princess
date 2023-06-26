@@ -1,0 +1,129 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'base/css/navbar.css'%}">
+
+<div id="navigation" class="navigation">
+    
+    <ul>
+        <li class="list active">
+            <b></b>
+            <b></b>
+            <a href="{% url 'Category:home'%}">
+                <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                <span class="title">خانه</span>
+
+            </a>
+        </li>
+        <li class="list " id="list-search">
+            <b></b>
+            <b></b>
+            <a href="{% url 'Category:search_page'%}">
+                <span class="icon"><ion-icon name="search-outline"></ion-icon></span>
+                <span class="title">جستجو</span>
+
+            </a>
+        </li>
+        <li class="list " id="list-search">
+            <b></b>
+            <b></b>
+            <a href="{% url 'Orders:cart_view'%}">
+                <span class="icon"><ion-icon name="search-outline"></ion-icon></span>
+                <span class="title">سبد خرید</span>
+
+            </a>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="list">
+            <b></b>
+            <b></b>
+            <a href="#">
+                <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                <span class="title">پروفایل</span>
+
+            </a>
+        </li>
+
+        <li class="list">
+            <b></b>
+            <b></b>
+            <a href="#">
+                <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                <span class="title">خروج</span>
+
+            </a>
+        </li>
+        {% else %}
+        <li  class="list" id="list-login">
+            <b></b>
+            <b></b>
+            <a href="{% url 'Accounts:login_register' %}">
+                <span class="icon"><ion-icon name="log-in-outline"></ion-icon></span>
+                <span class="title">ورود و ثبت نام</span>
+
+            </a>
+        </li>
+
+
+        {% endif %}
+    </ul>
+</div>
+<div class="cart">
+    <div class="box-cart">
+        <div class="product">
+            <div class="img-product">
+                <img src="{% static 'base/css/1.png' %}" alt="">
+            </div>
+        <div class="info-product"></div>
+        </div>
+        
+    </div>
+
+</div>
+<div class="toggle right" id="toggle_right">
+    <ion-icon name="menu-outline" class="open"></ion-icon>
+    <ion-icon name="close-outline" class="close"></ion-icon>
+    
+</div>
+<div class="toggle left" id="toggle_left">
+    <ion-icon style="display: block;" name="cart-outline"></ion-icon>  
+</div>
+<script>
+    let menutoggle = document.getElementById('toggle_right')
+    let carttogle = document.getElementById('toggle_left')
+
+    let navigation = document.querySelector('.navigation')
+    let cart = document.querySelector('.cart')
+    menutoggle.onclick=function(){
+        menutoggle.classList.toggle('active')
+        if( menutoggle.classList=='toggle right active'){
+            navigation.style.left='+20px'
+            menutoggle.style.zIndex=109;
+        }
+        else{
+            navigation.style.left='-500px'
+            menutoggle.style.zIndex=100;
+        }
+    }
+    carttogle.onclick=function(){
+        if( cart.style.right=='-500px'){
+            carttogle.classList.add('active')
+            cart.style.right='20px'
+        }
+        else{
+            cart.style.right='-500px'
+            carttogle.classList.remove('active')
+        }
+    }
+
+
+    let list = document.querySelectorAll('.list')
+    for (let i = 0; i < list.length; i++) {
+        list[i].onclick=function(){
+            let j = 0
+            while (j<list.length){
+                list[j++].className='list'
+            }
+            list[i].className = 'list active'
+        }
+      
+    }
+</script>

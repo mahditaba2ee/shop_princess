@@ -1,0 +1,230 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+   
+}
+.navigation{
+    position: fixed;
+    height: 500px;
+    top: 20px;
+    z-index: 108;
+    box-sizing: initial;
+    border-left: 5px solid #4d5bf9;
+    left: -500px;
+    bottom: 20px;
+    width: 300px;
+    border-radius: 10px;
+    background: #4d5bf9;
+    transition:.5s ;
+    overflow:hidden;
+    
+    
+}
+.navigation.active{
+    width: 300px;
+    overflow-x: hidden;
+}
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 40px ;
+    height: 100%;
+}
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: -20px;
+    z-index: 100;
+}
+
+.navigation ul li b:nth-child(1){
+    display: none;
+
+    position: absolute;
+    top: -20px;
+    height: 20px;
+    width: 100%;
+    background-color: #fff;
+ 
+    
+}
+.navigation ul li b:nth-child(1)::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius: 20px;
+    background-color: #4d5bf9;
+}
+
+.navigation ul li b:nth-child(2){
+    position: absolute;
+    bottom: -20px;
+    height: 20px;
+    width: 100%;
+    background-color: #fff;
+    display: none;
+ z-index: 10;
+    
+}
+.navigation ul li b:nth-child(2)::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 20px;
+    background-color: #4d5bf9;
+}
+.navigation ul li.active b:nth-child(1),
+.navigation ul li.active b:nth-child(2){
+    display: block;
+}
+
+
+
+
+
+.navigation ul li.active{
+    background-color: #fff;
+}
+.navigation ul li.active a{
+    color: #333;
+} 
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+.navigation ul li a .icon ion-icon{
+    font-size: 1.5em;
+}
+.navigation ul li a .title{
+
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: normal;
+}
+.toggle{
+    position: fixed;
+    z-index: 105;
+  
+    width: 50px;
+    height: 50px;
+    background-color: #4d5bf9;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+
+}
+.toggle.right{
+    top: 20px;
+    right: 20px;
+}
+.toggle.left{
+    top: 20px;
+    left: 20px;
+    z-index: 107;
+}
+.toggle ion-icon{
+    position: absolute;
+    color: #fff;
+    font-size: 34px;
+    display: none;
+}
+.toggle.active{
+    background-color: #ff4d89;
+}
+.toggle ion-icon.open,
+.toggle.active ion-icon.close
+{
+    display: block;
+}
+.toggle ion-icon.close,
+.toggle.active ion-icon.open
+{
+    display: none;
+}
+
+
+
+.cart{
+    position: fixed;
+    height: 500px;
+    top: 20px;
+    z-index: 101;
+    box-sizing: initial;
+    border-left: 5px solid #4d5bf9;
+    right: -500px;
+    z-index: 106;
+    bottom: 20px;
+    width: 300px;
+    border-radius: 10px;
+    background: #4d5bf9;
+    transition:.5s ;
+    overflow:hidden;
+ 
+    
+    
+    
+}
+.cart .box-cart{
+width: 100%;
+height: 80%;
+overflow-y: scroll;
+
+}
+.cart .box-cart .product{
+    background: #ff4d89;
+    position: relative;
+    width: 90%;
+    box-sizing: initial;
+    height: 30px;
+    margin-top: 10px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.cart .box-cart .product .img-product{
+    margin: 10px;
+    position: relative;
+    top: 15px;
+}
+.cart .box-cart .product .img-product img{
+    width: 70px;
+    height: 70px;
+    border-radius: 250px;
+
+}
+.cart .product .info-product{}
+
